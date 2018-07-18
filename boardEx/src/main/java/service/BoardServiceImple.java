@@ -102,9 +102,30 @@ public class BoardServiceImple implements BoardService{
 			boardDao.edit(response,b);
 			result=1;
 		}
-				
-		
 		return result;
+	}
+	
+	//게시글 삭제
+	public int del_ok(HttpServletResponse response, int board_num, String pwd) throws Exception{
+		System.out.println("service - del_ok");
+		PrintWriter out = response.getWriter();
+		response.setContentType("Text/html;charset=UTF-8");
+		int result=0;
+		
+		BoardBean board = boardDao.getBoardCont(board_num);
+		if(!board.getBoard_pass().equals(pwd)) {
+			out.println("<script>");
+			out.println("alert('비번이 다릅니다')");
+			out.println("history.back()");
+			out.println("</script>");
+			out.close();
+			
+			return result;
+		}else {
+			boardDao.boardDelete(response,board_num,pwd);
+			result=1;
+		}
+		return 0;
 	}
 	
 	

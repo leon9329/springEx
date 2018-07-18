@@ -57,5 +57,10 @@ public class BoardDaoImpl implements BoardDao{
 		sqlSession.update("Test.board_edit",b); 
 	}
 	
+	//게시판 삭제
+	public void boardDelete(HttpServletResponse response, int board_num, String pwd) throws Exception{
+		System.out.println("dao-boardDelete");
+		sqlSession.delete("Test.board_delete",board_num);
+	}
 
 }

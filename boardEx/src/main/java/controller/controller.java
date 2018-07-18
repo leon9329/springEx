@@ -73,14 +73,17 @@ public class controller {
 			contM.setViewName("/board_edit");
 		}else if(state.equals("reply")) {
 			contM.setViewName("/board_reply");
+		}else if(state.equals("del")) {
+			contM.setViewName("/board_del");
 		}
 		return contM;
 	}
 	
 	//게시판 수정
-	@RequestMapping(value="/board_edit_ok.nhn",method=RequestMethod.POST)
+	@RequestMapping(value="/board_edit_ok.nhn", method = RequestMethod.POST)
 	public String board_edit_ok(@ModelAttribute BoardBean b,
 			@RequestParam("page") String page, HttpServletResponse response) throws Exception{
+		System.out.println("**********board_edit_ok**************");
 		
 		int result = boardService.edit(response,b);
 		
@@ -88,10 +91,25 @@ public class controller {
 			return null;
 		}else {
 			return "redirect:/board_cont.nhn?board_num="+b.getBoard_num()
-					+"$page="+page+"$state=cont";
+					+"&page="+page+"&state=cont";
 		}
-		
 	}
 	
+	//게시글 삭제
+	@RequestMapping(value="/board_del_ok.nhn", method=RequestMethod.POST)
+	public String board_del_ok(@RequestParam("board_num") int board_num,
+							@RequestParam("page") String page,
+							@RequestParam("pwd") String pwd,
+							HttpServletResponse response) throws Exception{
+		System.out.println("controller - board_del_ok");
+		int result=boardService.del_ok(response, board_num, pwd);
+		if(result==0) {
+			return null;
+		}else {
+			return "redirect:/board_list.nhn?page="+page;
+		}
+	}
+
+
 
 }

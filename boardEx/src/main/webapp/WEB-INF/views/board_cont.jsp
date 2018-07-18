@@ -35,9 +35,9 @@
 </table>
 
 	<div align=center>
-		<input type=button value=수정 onClick="location='board_cont.nhn?board_num=${bcont.board_num }&page=${page	 }&state=edit'"/>
-		<input type=button value=삭제 onClick="location='board_cont.nhn?board_num=${bcont.board_num }&page=${page	 }&state=del'"/>
-		<input type=button value=답변 onClick="location='board_cont.nhn?board_num=${bcont.board_num }&page=${page	 }&state=reply'"/>
+		<input type=button value=수정 onClick="location='board_cont.nhn?board_num=${bcont.board_num }&page=${page}&state=edit'"/>
+		<input type=button value=삭제 onClick="location='board_cont.nhn?board_num=${bcont.board_num }&page=${page}&state=del'"/>
+		<input type=button value=답변 onClick="location='board_cont.nhn?board_num=${bcont.board_num }&page=${page}&state=reply'"/>
 		<input type=button value=목록 onClick="location='board_list.nhn?page=${page}'"/>
 		
 	</div>

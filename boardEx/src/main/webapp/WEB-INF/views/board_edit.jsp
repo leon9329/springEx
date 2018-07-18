@@ -15,6 +15,9 @@
  <div id="bbswrite_wrap">
   <h2 class="bbswrite_title">게시판 수정폼</h2>
   <form method="post" action="<%=request.getContextPath() %>/board_edit_ok.nhn" onSubmit="return board_check()">
+  <input type=hidden name=board_num value="${bcont.board_num }" />
+  <input type=hidden name=page value="${page }" />
+  
    <table id="bbswrite_t">
     <tr>
      <th>글쓴이</th>

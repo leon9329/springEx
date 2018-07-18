@@ -20,5 +20,7 @@ public interface BoardService {
 	
 	public int edit(HttpServletResponse response, BoardBean b) throws Exception;
 	
+	public int del_ok(HttpServletResponse response, int board_num, String board_pass) throws Exception;
+	
 
 }

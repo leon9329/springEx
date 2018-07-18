@@ -14,6 +14,6 @@ public interface BoardDao {
 	public void boardHit(int board_num) throws Exception;
 	public BoardBean getBoardCont(int board_num) throws Exception;
 	public void edit(HttpServletResponse response, BoardBean b) throws Exception;
-
+	public void boardDelete(HttpServletResponse response, int board_num, String board_pass) throws Exception;
 	
 }

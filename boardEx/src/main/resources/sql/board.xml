@@ -45,9 +45,15 @@
 	<!-- 게시물 수정 -->
 	<update id="board_edit" parameterType="board">
 		update board53 set
-		board_name=#{board_name}
-		board_subject=#{board_subject}
+		board_name=#{board_name},
+		board_subject=#{board_subject},
 		board_content=#{board_content}
 		where board_num=#{board_num}
 	</update>
+	
+	<!-- 게시글 삭제 -->
+	<delete id="board_delete" parameterType="int">
+	delete from board53 where board_num=#{board_num}
+	</delete>
+	
 </mapper>
