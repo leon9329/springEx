@@ -8,7 +8,7 @@
 </head>
 <body>
 <%
-	response.sendRedirect("board_write.nhn");
+	response.sendRedirect("board_list.nhn");
 %>
 </body>
 </html>

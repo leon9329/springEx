@@ -23,8 +23,8 @@
 <body>
 <h2 align=center>게시글 삭제</h2>
 <form method="post" action="board_del_ok.nhn" onsubmit="return del_check()">
-<input type="hidden" name="board_num" value=${bcont.board_num }/>
-<input type="hidden" name="page" value=${page }/>
+<input type="hidden" name="board_num" value="${bcont.board_num }"/>
+<input type="hidden" name="page" value="${page }"/>
 
 <table align=center border=1>
 	<tr>

@@ -98,7 +98,7 @@ public class controller {
 	//게시글 삭제
 	@RequestMapping(value="/board_del_ok.nhn", method=RequestMethod.POST)
 	public String board_del_ok(@RequestParam("board_num") int board_num,
-							@RequestParam("page") String page,
+							@RequestParam("page") int page,
 							@RequestParam("pwd") String pwd,
 							HttpServletResponse response) throws Exception{
 		System.out.println("controller - board_del_ok");

@@ -125,7 +125,7 @@ public class BoardServiceImple implements BoardService{
 			boardDao.boardDelete(response,board_num,pwd);
 			result=1;
 		}
-		return 0;
+		return result;
 	}
 	
 	
