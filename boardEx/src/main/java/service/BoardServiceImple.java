@@ -128,6 +128,18 @@ public class BoardServiceImple implements BoardService{
 		return result;
 	}
 	
+	//댓글 달기
+	public void reply_ok(BoardBean b) throws Exception{
+		System.out.println("reply_ok");
+		boardDao.refEdit(b);
+		System.out.println("refEdit 나옴");
+		b.setBoard_re_lev(b.getBoard_re_lev()+1);
+		b.setBoard_re_seq(b.getBoard_re_seq()+1);
+		
+		boardDao.boardReplyOk(b);
+		
+	}
+	
 	
 
 }

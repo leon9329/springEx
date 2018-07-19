@@ -109,6 +109,15 @@ public class controller {
 			return "redirect:/board_list.nhn?page="+page;
 		}
 	}
+	
+	//댓글 달기
+	@RequestMapping(value="/board_reply_ok.nhn", method=RequestMethod.POST)
+	public String board_reply_ok(@ModelAttribute BoardBean b,
+			@RequestParam("page")String page) throws Exception {
+		System.out.println("board_reply_ok");
+		boardService.reply_ok(b);
+		return "redirect:/board_list.nhn?page="+page;
+	}
 
 
 

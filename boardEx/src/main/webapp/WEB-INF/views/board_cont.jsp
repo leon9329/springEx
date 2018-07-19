@@ -21,7 +21,7 @@
 	
 	<tr>
 		<td>제목</td>
-		<td colspan=2>${bcont.board_content }</td>
+		<td colspan=2>${bcont.board_subject }</td>
 		<td>등록일</td>
 		<td colspan=2>
 		<fmt:formatDate value="${bcont.board_date }" pattern="yyyy-MM-dd HH:mm:ss"/>

@@ -22,5 +22,8 @@ public interface BoardService {
 	
 	public int del_ok(HttpServletResponse response, int board_num, String board_pass) throws Exception;
 	
+	public void reply_ok(BoardBean b) throws Exception;
+	
+	
 
 }
